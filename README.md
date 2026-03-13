@@ -11,3 +11,50 @@ The 3D aspect of this is planned to used for rendering animations of 3D characte
 This could also be useful for rendering still images as artwork and brand content.
 
 It sounds like this may end up becoming generalized for many purposes, so maybe we'll end up renaming this from "Animation Pipeline" to something more general like "Media Production Pipeline".
+
+## Software
+
+Here are the software tools we plan to use.
+
+All software of interest:
+- Blender
+- Open 3D Engine (O3DE)
+- Clip Studio
+- `.xdts` file format
+- `.tdts` file format
+- Toei Animation Digital Exposure Sheet
+- OpenToonz
+- Krita
+- Meddy
+- Git
+- A version control solution for large binary assets
+
+### Storyboarding Software: TBD
+
+### 2D Illustration (e.g., Background Art) Software: Anything
+
+Any software is fine. 2D illustrations not used as animation cels have way more freedom on how they are authored. It could even be hand-painted and scanned.
+
+I decide to use Clip Studio.
+
+### Layout, Keyframe, and Inbetween 2D Animation Software: Clip Studio
+
+Although, ideally not actually required. I feel we should be able to use any illustration software for this step and rely on the compositing step to achieve anything we want in there. At the end of the day, all that matters is that we have the finished cels to send to the compositing team. Clip Studio just happens to have really good animation previewing tools.
+
+### Digital Timesheet File Format: `.tdts`
+
+Toei's file format is not completely necessary, we could just use `.xdts` for the minimal timing data if desired.
+
+### Digital Timesheet Syncing Tool: Toei Animation Digital Exposure Sheet
+
+Or custom scripts for syncing timesheet files to non-Clip-Studio software.
+
+We will need a way to sync timesheet information to the compositing software of choice. Toei's program has tools for After Effects.
+
+### 2D Animation Compositing Software: Blender
+
+Blender's Video Sequence Editor for animating cels, implementing anime camera work, and VFX.
+
+### Video Editing Software: Blender
+
+Blender's Video Sequence Editor for combining all the cuts and audio, and rendering the final output artifact to go out for delivery.
