@@ -22,16 +22,16 @@ direction: right
     "Compositing"
 }
 
-"Audio" {
-    "SFX"
-    "Voice"
-    "Music"
-}
-
 "Production"."Compositing" -> "Post-Production"."Video Editing"
 
-"Audio" -> "Post-Production"."Video Editing"
-
 "Post-Production" {
+    "Audio" {
+        "SFX"
+        "Voice"
+        "Music"
+    }
+
+    "Audio" -> "Video Editing"
+
     "Video Editing"
 }
