@@ -1,4 +1,4 @@
-# AnimationPipeline
+# MediaProductionPipeline
 
 Documentation, diagrams, and potentially even tools (although, those tools would likely call for separate repositories) to creating a workflow for making 2D/3D video animations.
 
