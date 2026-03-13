@@ -1,0 +1,38 @@
+# This should be an overview of the generic production pipeline. @Christian: TODO: [todo] Currently, it's
+# specific to the anime pipeline. Maybe we can move this to an example of a specialized anime pipeline later.
+
+# @Christian: TODO: [todo][theme] Find a way to import shared theme customization from another file.
+
+"Pre-Production" {
+    "Writing" -> "Storyboard"
+}
+
+"Pre-Production"."Storyboard" -> "Production"."Layout"
+
+"Production" {
+    "Layout"
+
+    "Layout" -> "Key Animation" -> "Inbetween Animation" -> "Coloring"
+    "Layout" -> "3D Animation"
+    "Layout" -> "Backgrounds"
+
+    "Coloring" -> "Compositing"
+    "3D Animation" -> "Compositing"
+    "Backgrounds" -> "Compositing"
+
+    "Compositing"
+}
+
+"Audio" {
+    "SFX"
+    "Voice"
+    "Music"
+}
+
+"Production"."Compositing" -> "Post-Production"."Video Editing"
+
+"Audio" -> "Post-Production"."Video Editing"
+
+"Post-Production" {
+    "Video Editing"
+}
