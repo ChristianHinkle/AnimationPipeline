@@ -1,0 +1,31 @@
+...@../DefaultVars
+
+Title: {
+    label: |md
+        # Compositing to Rendering
+    |
+    shape: text
+    near: top-center
+}
+
+CompositingToRendering: "Compositing to Rendering,\n\nSync Data to Final Rendering Engine\n" {
+    ExportFromCompositingSoftware: "Export From Compositing Software" {
+        Render: "Render Any Necessary Artifacts for the Next Stage"
+    }
+
+    ExportFromCompositingSoftware -> ImportToRenderingSoftware
+
+    ImportToRenderingSoftware: "Import to Rendering Software" {
+        Import3dAssets: "Import 3D Assets\n\n(Models, Anims, Textures)"
+        Import3dAssets -> RewriteMaterials
+
+        RewriteMaterials: "Rewrite Materials"
+
+        Import2dAssets: "Import 2D Assets\n\n(Images, Renders)"
+
+        RewriteMaterials -> ImportCelExposureInformation
+        Import2dAssets -> ImportCelExposureInformation
+
+        ImportCelExposureInformation: "Import Cel Exposure Information?"
+    }
+}

@@ -1,0 +1,24 @@
+...@../DefaultVars
+
+Title: {
+    label: |md
+        # Rendering Engine
+    |
+    shape: text
+    near: top-center
+}
+
+RenderingEngine: "Rendering Engine" {
+    EngineWork: "Engine Work" {
+        "Write Custom Shaders"
+        "Customize Graphics Features"
+        "Write Custom Render Passes"
+        "Add Particle Systems"
+    }
+
+    EngineWork -> RenderCut
+
+    RenderCut: "Render Cut" {
+        RenderCut: "Render to Output Artifact"
+    }
+}

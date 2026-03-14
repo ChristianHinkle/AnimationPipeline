@@ -2,7 +2,7 @@
 
 ...@AssetProduction
 ...@AssetsToCompositing
-...@CutCompositing
+...@CutCompositing/Overview
 
 direction: right
 
@@ -16,52 +16,13 @@ Title: {
 
 AssetProduction.KeyAnimation -> AssetsToCompositing -> CutCompositing
 
-CutCompositing {
-    # Reconnect the last step of CutCompositing to our new content here.
-    (ImplementCameraWork -> RenderCut)[0]: null
-    ImplementCameraWork -> SyncSceneToRenderingEngine
-
-    SyncSceneToRenderingEngine: "Import/Sync to Final Rendering Engine" {
-        ExportFromCompositingSoftware: "Export From Compositing Software" {
-            Render: "Render Any Necessary Artifacts for the Next Stage"
-        }
-
-        ExportFromCompositingSoftware -> ImportToRenderingSoftware
-
-        ImportToRenderingSoftware: "Import to Rendering Software" {
-            Import3dAssets: "Import 3D Assets\n\n(Models, Anims, Textures)"
-            Import3dAssets -> RewriteMaterials
-
-            RewriteMaterials: "Rewrite Materials"
-
-            Import2dAssets: "Import 2D Assets\n\n(Images, Renders)"
-
-            RewriteMaterials -> ImportCelExposureInformation
-            Import2dAssets -> ImportCelExposureInformation
-
-            ImportCelExposureInformation: "Import Cel Exposure Information?"
-        }
-    }
-
-    SyncSceneToRenderingEngine -> RenderEngineWork
-
-    RenderEngineWork: "Render Engine Work" {
-        "Write Custom Shaders"
-        "Customize Graphics Features"
-        "Write Custom Render Passes"
-        "Add Particle Systems"
-    }
-
-    RenderEngineWork -> RenderCut
-}
+RenderingEngine.RenderCut -> Editorial.JoiningCuts
 
 AudioAssets: "Audio Assets" {
     "SFX"
     "Voice"
     "Music"
 }
-
-CutCompositing.RenderCut -> Editorial.JoiningCuts
 
 AudioAssets -> Editorial.AudioPlacement
 
