@@ -1,5 +1,7 @@
 ...@DefaultVars
 
+...@AssetProduction
+...@AssetsToCompositing
 ...@CutCompositing
 
 direction: right
@@ -12,7 +14,9 @@ Title: {
     near: top-center
 }
 
-Compositing {
+AssetProduction.KeyAnimation -> AssetsToCompositing -> CutCompositing
+
+CutCompositing {
     # Reconnect the last step of CutCompositing to our new content here.
     (ImplementCameraWork -> RenderCut)[0]: null
     ImplementCameraWork -> SyncSceneToRenderingEngine
@@ -57,7 +61,7 @@ AudioAssets: "Audio Assets" {
     "Music"
 }
 
-Compositing.RenderCut -> Editorial.JoiningCuts
+CutCompositing.RenderCut -> Editorial.JoiningCuts
 
 AudioAssets -> Editorial.AudioPlacement
 
