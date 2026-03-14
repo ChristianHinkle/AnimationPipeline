@@ -1,0 +1,38 @@
+...@DefaultVars
+
+Title: {
+    label: |md
+        # Cut Compositing
+    |
+    shape: text
+    near: top-center
+}
+
+"Key Animation" {
+    "Author the Key Frames"
+    "Decide the Timing and Number of Inbetweens"
+}
+
+"Key Animation" -> SyncCelsToCompositingSoftware
+
+SyncCelsToCompositingSoftware: Sync Animtion Cels to Compositing Software {
+    "Export XDTS File" -> "Import XDTS File Into Compositing Software" -> BulkAddCelsToTimeline
+    "Bulk Export Animation Cels" -> "Import Cels Into Compositing Software" -> BulkAddCelsToTimeline
+
+    BulkAddCelsToTimeline: "Bulk Add Cels to Timeline,\n\nUsing Imported Timesheet Positions and Exposure Lengths"
+}
+
+SyncCelsToCompositingSoftware -> Compositing
+
+Compositing {
+    ImplementCameraWork: "Implement Camera Work,\n\nAs Instructed by Direction Memos on Timesheet\n" {
+        "Main Camera"
+        "Cels"
+        "Books"
+        "BGs"
+    }
+
+    ImplementCameraWork -> RenderCut
+
+    RenderCut: "Render Cut to Output Artifact"
+}
