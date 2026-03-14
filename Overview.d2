@@ -50,3 +50,50 @@ Compositing {
 
     RenderEngineWork -> RenderCut
 }
+
+AudioAssets: "Audio Assets" {
+    "SFX"
+    "Voice"
+    "Music"
+}
+
+Compositing.RenderCut -> Editorial.JoiningCuts
+
+AudioAssets -> Editorial.AudioPlacement
+
+Editorial: {
+    JoiningCuts: "Joining Cuts"
+    Transitions: "Between-Cut Transitions"
+    AudioPlacement: "Audio Placement"
+    EditorialLevelAdditions: "Editorial-Level Additions"
+
+    JoiningCuts -> Transitions
+    Transitions -> FinalPictureRender
+    AudioPlacement -> FinalPictureRender
+    EditorialLevelAdditions -> FinalPictureRender
+
+    FinalPictureRender: "Final Picture Render"
+}
+
+Editorial.FinalPictureRender -> PictureLock
+
+PictureLock: "Picture Lock"
+
+PictureLock -> SoundEditing
+
+AudioAssets -> SoundEditing
+
+SoundEditing: "Sound Editing" {
+    "Finish Audio Work" -> "Final Audio Mixing" -> "Final Mastering"
+}
+
+SoundEditing -> Delivery
+
+Delivery {
+    MasterVideoFiles: "Create Master Video Files\n\n(Combining Picture and Sound)"
+}
+
+Delivery -> Distribution
+
+Distribution {
+}
