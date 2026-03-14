@@ -1,6 +1,6 @@
 ...@../DefaultVars
 
-...@CompositingCuts
+...@CompositingWork
 ...@CompositingToRendering
 ...@RenderingEngine
 
@@ -12,4 +12,6 @@ Title: {
     near: top-center
 }
 
-CompositingCuts -> CompositingToRendering -> RenderingEngine
+CompositingCuts: "Compositing Cuts" {
+    CompositingWork -> CompositingToRendering -> RenderingEngine
+}
