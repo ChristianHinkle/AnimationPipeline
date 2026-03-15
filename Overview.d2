@@ -2,10 +2,10 @@
 ...@D2Utils
 
 PreProduction: "Pre-Production" {
-    Ideas: @Ideas/Overview.Ideas
-    Writing: @Writing/Overview.Writing
-    Storyboarding: @Storyboarding/Overview.Storyboarding
-    Design: @Design/Overview.Design
+    PreProductionIdeas: @PreProductionIdeas/Overview.PreproductionIdeas
+    PreProductionWriting: @PreProductionWriting/Overview.PreproductionWriting
+    PreProductionStoryboarding: @PreProductionStoryboarding/Overview.PreproductionStoryboarding
+    PreProductionDesign: @PreProductionDesign/Overview.PreproductionDesign
 }
 
 Production: "Production" {
@@ -32,10 +32,10 @@ Title: {
 }
 
 PreProduction {
-    Ideas -> Writing -> Storyboarding -> Design
+    PreProductionIdeas -> PreProductionWriting -> PreProductionStoryboarding -> PreProductionDesign
 }
 
-PreProduction.Design -> Production.AssetProduction
+PreProduction.PreProductionDesign -> Production.AssetProduction
 
 Production.AssetProductionAudioRerouteNodeA {
     class: RerouteNode
@@ -46,7 +46,7 @@ Production.AssetProduction.Audio -- Production.AssetProductionAudioRerouteNodeA
 Production.AssetProductionAudioRerouteNodeA -> Production.CompositingCuts.CompositingWork.RoughAudio
 
 Production {
-    AssetProduction.KeyAnimation -> AssetsToCompositing -> CompositingCuts
+    AssetProduction.Coloring -> AssetsToCompositing -> CompositingCuts
 }
 
 Production.CompositingCuts.RenderingEngine.RenderCut -> PostProduction.Editorial.JoiningCuts

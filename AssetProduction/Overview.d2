@@ -14,6 +14,20 @@ AssetProduction: "Asset Production" {
         "Decide the Timing and Number of Inbetweens"
     }
 
+    KeyAnimation -> CleanupAndInbetweens
+
+    CleanupAndInbetweens: "Cleanup and Inbetweens" {
+        "Clean Up Key Frames" -> "Author the Inbetween Frames\n\n(According to the Timesheet)"
+    }
+
+    CleanupAndInbetweens -> Coloring
+
+    Coloring: "Coloring" {
+        "Painting"
+        "Finishing"
+        "White Balancing"
+    }
+
     Audio: "Audio" {
         "SFX"
         "Voice"
