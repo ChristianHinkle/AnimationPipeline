@@ -1,5 +1,12 @@
 ...@DefaultVars
 
+PreProduction: "Pre-Production" {
+    Ideas: @Ideas/Overview.Ideas
+    Writing: @Writing/Overview.Writing
+    Storyboarding: @Storyboarding/Overview.Storyboarding
+    Design: @Design/Overview.Design
+}
+
 Production: "Production" {
     AssetProduction: @AssetProduction/Overview.AssetProduction
     AssetsToCompositing: @AssetsToCompositing/Overview.AssetsToCompositing
@@ -22,6 +29,12 @@ Title: {
     shape: text
     near: top-center
 }
+
+PreProduction {
+    Ideas -> Writing -> Storyboarding -> Design
+}
+
+PreProduction.Design -> Production.AssetProduction
 
 Production {
     AssetProduction.KeyAnimation -> AssetsToCompositing -> CompositingCuts
