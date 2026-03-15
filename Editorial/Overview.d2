@@ -1,0 +1,23 @@
+...@../DefaultVars
+
+Title: {
+    label: |md
+        # Editorial Overview
+    |
+    shape: text
+    near: top-center
+}
+
+Editorial: {
+    JoiningCuts: "Joining Cuts"
+    Transitions: "Between-Cut Transitions"
+    AudioPlacement: "Audio Placement"
+    EditorialLevelAdditions: "Editorial-Level Additions"
+
+    JoiningCuts -> Transitions
+    Transitions -> FinalPictureRender
+    AudioPlacement -> FinalPictureRender
+    EditorialLevelAdditions -> FinalPictureRender
+
+    FinalPictureRender: "Final Picture Render"
+}

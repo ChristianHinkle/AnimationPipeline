@@ -3,6 +3,9 @@
 ...@AssetProduction/Overview
 ...@AssetsToCompositing/Overview
 ...@CompositingCuts/Overview
+...@Editorial/Overview
+...@SoundEditing/Overview
+...@Delivery/Overview
 
 direction: right
 
@@ -26,39 +29,14 @@ AudioAssets: "Audio Assets" {
 
 AudioAssets -> Editorial.AudioPlacement
 
-Editorial: {
-    JoiningCuts: "Joining Cuts"
-    Transitions: "Between-Cut Transitions"
-    AudioPlacement: "Audio Placement"
-    EditorialLevelAdditions: "Editorial-Level Additions"
-
-    JoiningCuts -> Transitions
-    Transitions -> FinalPictureRender
-    AudioPlacement -> FinalPictureRender
-    EditorialLevelAdditions -> FinalPictureRender
-
-    FinalPictureRender: "Final Picture Render"
-}
-
 Editorial.FinalPictureRender -> PictureLock
 
 PictureLock: "Picture Lock"
 
 PictureLock -> SoundEditing
-
 AudioAssets -> SoundEditing
 
-SoundEditing: "Sound Editing" {
-    "Finish Audio Work" -> "Final Audio Mixing" -> "Final Mastering"
-}
-
-SoundEditing -> Delivery
-
-Delivery {
-    MasterVideoFiles: "Create Master Video Files\n\n(Combining Picture and Sound)"
-}
-
-Delivery -> Distribution
+SoundEditing -> Delivery -> Distribution
 
 Distribution {
 }
