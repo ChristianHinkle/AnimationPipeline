@@ -1,11 +1,17 @@
 ...@DefaultVars
 
-...@AssetProduction/Overview
-...@AssetsToCompositing/Overview
-...@CompositingCuts/Overview
-...@Editorial/Overview
-...@SoundEditing/Overview
-...@Delivery/Overview
+Production: "Production" {
+    AssetProduction: @AssetProduction/Overview.AssetProduction
+    AssetsToCompositing: @AssetsToCompositing/Overview.AssetsToCompositing
+    CompositingCuts: @CompositingCuts/Overview.CompositingCuts
+}
+
+PostProduction: "Post-Production" {
+    Editorial: @Editorial/Overview.Editorial
+    SoundEditing: @SoundEditing/Overview.SoundEditing
+}
+
+Delivery: @Delivery/Overview.Delivery
 
 direction: right
 
@@ -17,9 +23,11 @@ Title: {
     near: top-center
 }
 
-AssetProduction.KeyAnimation -> AssetsToCompositing -> CompositingCuts
+Production {
+    AssetProduction.KeyAnimation -> AssetsToCompositing -> CompositingCuts
+}
 
-CompositingCuts.RenderingEngine.RenderCut -> Editorial.JoiningCuts
+Production.CompositingCuts.RenderingEngine.RenderCut -> PostProduction.Editorial.JoiningCuts
 
 AudioAssets: "Audio Assets" {
     "SFX"
@@ -27,16 +35,18 @@ AudioAssets: "Audio Assets" {
     "Music"
 }
 
-AudioAssets -> Editorial.AudioPlacement
+AudioAssets -> PostProduction.Editorial.AudioPlacement
 
-Editorial.FinalPictureRender -> PictureLock
+PostProduction {
+    Editorial.FinalPictureRender -> PictureLock
 
-PictureLock: "Picture Lock"
+    PictureLock: "Picture Lock"
 
-PictureLock -> SoundEditing
-AudioAssets -> SoundEditing
+    PictureLock -> SoundEditing
+    AudioAssets -> SoundEditing
+}
 
-SoundEditing -> Delivery -> Distribution
+PostProduction.SoundEditing -> Delivery -> Distribution
 
 Distribution {
 }
