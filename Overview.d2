@@ -1,4 +1,5 @@
 ...@DefaultVars
+...@D2Utils
 
 PreProduction: "Pre-Production" {
     Ideas: @Ideas/Overview.Ideas
@@ -36,15 +37,27 @@ PreProduction {
 
 PreProduction.Design -> Production.AssetProduction
 
+Production.AssetProductionAudioRerouteNodeA {
+    class: RerouteNode
+}
+
+Production.AssetProduction.Audio -- Production.AssetProductionAudioRerouteNodeA
+
+Production.AssetProductionAudioRerouteNodeA -> Production.CompositingCuts.CompositingWork.RoughAudio
+
 Production {
     AssetProduction.KeyAnimation -> AssetsToCompositing -> CompositingCuts
-
-    AssetProduction.Audio -> CompositingCuts.CompositingWork.RoughAudio
 }
 
 Production.CompositingCuts.RenderingEngine.RenderCut -> PostProduction.Editorial.JoiningCuts
 
-Production.AssetProduction.Audio -> PostProduction.Editorial.AudioPlacement
+PostProduction.AssetProductionAudioRerouteNodeB {
+    class: RerouteNode
+}
+
+Production.AssetProductionAudioRerouteNodeA -- PostProduction.AssetProductionAudioRerouteNodeB
+
+PostProduction.AssetProductionAudioRerouteNodeB -> PostProduction.Editorial.AudioPlacement
 
 PostProduction {
     Editorial.FinalPictureRender -> PictureLock
@@ -54,7 +67,7 @@ PostProduction {
     PictureLock -> SoundEditing
 }
 
-Production.AssetProduction.Audio -> PostProduction.SoundEditing
+PostProduction.AssetProductionAudioRerouteNodeB -> PostProduction.SoundEditing
 
 PostProduction.SoundEditing -> Delivery -> Distribution
 
