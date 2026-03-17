@@ -1,0 +1,43 @@
+...@../DefaultVars
+
+Title: {
+    label: |md
+        # 2D Asset Production
+    |
+    shape: text
+    near: top-center
+}
+
+AssetProduction.2dAssetProduction: "2D Asset Production" {
+
+    KeyAnimation: "Key Animation (Genga)" {
+        "Tie-Down/Clean-Up, or 2nd Key Iteration (Nigen)"
+    }
+
+    KeyAnimation -> KeyAnimationDirectorRevisions
+
+    KeyAnimationDirectorRevisions: "Directors Revise Key Animation"
+
+    KeyAnimationDirectorRevisions -> CleanupAndInbetweens
+
+    CleanupAndInbetweens: "Cleanup and Inbetweens (Douga)" {
+        KeyCleanup: "Final Cleanup of Key Frames" {
+            "Final Line Work Trace"
+            "Closing Loops for Digital Painting Team"
+        }
+
+        KeyCleanup -> "Author the Inbetween Frames\n\n(According to the Timesheet)"
+    }
+
+    CleanupAndInbetweens -> InbetweenCheck
+
+    InbetweenCheck: "Inbetween Check"
+
+    InbetweenCheck -> Coloring
+
+    Coloring: "Coloring" {
+        "Painting"
+        "Finishing"
+        "White Balancing"
+    }
+}

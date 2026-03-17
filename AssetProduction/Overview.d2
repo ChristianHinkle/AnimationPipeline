@@ -4,7 +4,9 @@
 
 ...@Layout
 ...@3dAssetProduction
+...@2dAssetProduction
 ...@Backgrounds
+...@Audio
 
 Title: {
     label: |md
@@ -26,44 +28,7 @@ AssetProduction: "Asset Production" {
         class: RerouteNode
     }
 
-    LayoutDirectorRevisionsRerouteNodeOutgoingA -> KeyAnimation
     LayoutDirectorRevisionsRerouteNodeOutgoingA -> 3dAssetProduction
+    LayoutDirectorRevisionsRerouteNodeOutgoingA -> 2dAssetProduction.KeyAnimation
     LayoutDirectorRevisionsRerouteNodeOutgoingA -> Backgrounds
-
-    KeyAnimation: "Key Animation (Genga)" {
-        "Tie-Down/Clean-Up, or 2nd Key Iteration (Nigen)"
-    }
-
-    KeyAnimation -> KeyAnimationDirectorRevisions
-
-    KeyAnimationDirectorRevisions: "Directors Revise Key Animation"
-
-    KeyAnimationDirectorRevisions -> CleanupAndInbetweens
-
-    CleanupAndInbetweens: "Cleanup and Inbetweens (Douga)" {
-        KeyCleanup: "Final Cleanup of Key Frames" {
-            "Final Line Work Trace"
-            "Closing Loops for Digital Painting Team"
-        }
-
-        KeyCleanup -> "Author the Inbetween Frames\n\n(According to the Timesheet)"
-    }
-
-    CleanupAndInbetweens -> InbetweenCheck
-
-    InbetweenCheck: "Inbetween Check"
-
-    InbetweenCheck -> Coloring
-
-    Coloring: "Coloring" {
-        "Painting"
-        "Finishing"
-        "White Balancing"
-    }
-
-    Audio: "Audio" {
-        "SFX"
-        "Voice"
-        "Music"
-    }
 }
