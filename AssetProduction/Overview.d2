@@ -1,5 +1,7 @@
 ...@../DefaultVars
 
+...@Layout
+
 Title: {
     label: |md
         # Asset Production Overview
@@ -9,18 +11,37 @@ Title: {
 }
 
 AssetProduction: "Asset Production" {
-    KeyAnimation: "Key Animation" {
-        "Author the Key Frames"
-        "Decide the Timing and Number of Inbetweens"
+
+    Layout -> LayoutDirectorRevisions
+
+    LayoutDirectorRevisions: "Directors Revise Layout"
+
+    LayoutDirectorRevisions -> KeyAnimation
+
+    KeyAnimation: "Key Animation (Genga)" {
+        "Tie-Down/Clean-Up, or 2nd Key Iteration (Nigen)"
     }
 
-    KeyAnimation -> CleanupAndInbetweens
+    KeyAnimation -> KeyAnimationDirectorRevisions
 
-    CleanupAndInbetweens: "Cleanup and Inbetweens" {
-        "Clean Up Key Frames" -> "Author the Inbetween Frames\n\n(According to the Timesheet)"
+    KeyAnimationDirectorRevisions: "Directors Revise Key Animation"
+
+    KeyAnimationDirectorRevisions -> CleanupAndInbetweens
+
+    CleanupAndInbetweens: "Cleanup and Inbetweens (Douga)" {
+        KeyCleanup: "Final Cleanup of Key Frames" {
+            "Final Line Work Trace"
+            "Closing Loops for Digital Painting Team"
+        }
+
+        KeyCleanup -> "Author the Inbetween Frames\n\n(According to the Timesheet)"
     }
 
-    CleanupAndInbetweens -> Coloring
+    CleanupAndInbetweens -> InbetweenCheck
+
+    InbetweenCheck: "Inbetween Check"
+
+    InbetweenCheck -> Coloring
 
     Coloring: "Coloring" {
         "Painting"
