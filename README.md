@@ -4,15 +4,15 @@ Documentation and diagrams for creating a workflow to produce media such as 2D/3
 
 Note: Any tools we end up writing for this are planned to be developed in separate repositories. We will link to them in this documentation when they become available.
 
-The original motivation for pipeline was to produce 2D/3D animations, but since it's so cross-discipline, I plan to generalize these workflows for many purposes.
+The original motivation for this pipeline was to produce 2D/3D animations, but since it's so cross-disciplinary, I plan to generalize these workflows for many purposes.
 
 This workflow should be able to produce 2D animations (like anime), 3D animations (like pre-rendered video game cutscenes), and both at the same time (e.g., 3D backgrounds for anime, or 2D visual effects in the Spider-Verse movie). I think we could even combine this into being a general video-editing and CG/VFX workflow as well for live-action content.
 
-The timesheet-based animation workflow is tailored to the Japanese anime industry's production pipeline. But I try unifying the terminology / giving analogies for western terms.
+The timesheet-based animation workflow is tailored to the Japanese anime industry's production pipeline. But I try to unify the terminology and give analogies for Western terms.
 
-The 3D aspect of this is planned to used for rendering animations of 3D characters. Namely, characters from our games so we can post fun video animations of them as another form of content and branding/marketing. We also want this to be a common pipeline for producing actual in-game cutscenes.
+The 3D aspect of this is planned to be used for rendering animations of 3D characters. Namely, characters from our games, so we can post fun video animations of them as another form of content and branding/marketing. We also want this to be a common pipeline for producing actual in-game cutscenes.
 
-Another possible use for this pipeline is to rendering still images as artwork and brand content. E.g., some video game covers are extremely complex (like Mario Kart World). Even though they are just single images, they use the 3D models, pose the models, add custom VFX (3D and 2D), overlay the game title, and basically they should be able to do whatever possible to get a really good final artwork.
+Another possible use for this pipeline is to render still images as artwork and brand content. E.g., some video game covers are extremely complex (like Mario Kart World). Even though they are just single images, they use the 3D models, pose the models, add custom VFX (3D and 2D), overlay the game title, etc. Basically, they should be able to do anything to get a really good final artwork.
 
 ## Software
 
@@ -36,17 +36,17 @@ All software of interest (not all are incorporated in the workflow):
 
 ### 2D Illustration (e.g., Background Art) Software: Anything
 
-Any software is fine. 2D illustrations not used as animation cels have way more freedom on how they are authored. It could even be hand-painted and scanned.
+Any software is fine. 2D illustrations that are not used as animation cels have way more freedom as to how they are authored. It could even be hand-painted and scanned.
 
 I decide to use Clip Studio.
 
 ### Layout, Keyframe, and Inbetween 2D Animation Software: Clip Studio
 
-Although, ideally not actually required. I feel we should be able to use any illustration software for this step and rely on the compositing step to achieve anything we want in there. At the end of the day, all that matters is that we have the finished cels to send to the compositing team. Clip Studio just happens to have really good animation previewing tools.
+Although ideally not actually required. I feel we should be able to use any illustration software for this step and rely on the compositing step to achieve anything we want in there. At the end of the day, all that matters is that we have the finished cels to send to the compositing team. Clip Studio just happens to have really good animation previewing tools.
 
 ### Digital Timesheet File Format: `.tdts`
 
-Toei's file format is not completely necessary, we could just use `.xdts` for the minimal timing data if desired.
+Toei's file format is not completely necessary. We could just use `.xdts` for the minimal timing data if desired.
 
 ### Digital Timesheet Syncing Tool: Toei Animation Digital Exposure Sheet
 
@@ -64,12 +64,12 @@ Blender's Video Sequence Editor for combining all the cuts and audio, and render
 
 ### 3D Modeling: Blender
 
-### 3D Hi-Res Scuplting: Blender
+### 3D Hi-Res Sculpting: Blender
 
-Maybe there's a better alternative though.
+Maybe there's a better alternative, though.
 
 ### 3D Texture Painting: Blender
 
-Maybe there's a better alternative though.
+Maybe there's a better alternative, though.
 
 ### 3D Animation: Blender
