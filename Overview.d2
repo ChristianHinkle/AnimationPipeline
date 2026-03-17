@@ -9,6 +9,8 @@ PreProduction: "Pre-Production" {
 }
 
 Production: "Production" {
+    ScriptWriting: @ScriptWriting/Overview.ScriptWriting
+    Storyboarding: @Storyboarding/Overview.Storyboarding
     AssetProduction: @AssetProduction/Overview.AssetProduction
     AssetsToCompositing: @AssetsToCompositing/Overview.AssetsToCompositing
     CompositingCuts: @CompositingCuts/Overview.CompositingCuts
@@ -35,7 +37,7 @@ PreProduction {
     PreProductionIdeas -> PreProductionWriting -> PreProductionStoryboarding -> PreProductionDesign
 }
 
-PreProduction.PreProductionDesign -> Production.AssetProduction
+PreProduction.PreProductionDesign -> Production.ScriptWriting -> Production.Storyboarding -> Production.AssetProduction.Layout
 
 Production.AssetProductionAudioRerouteNodeA {
     class: RerouteNode
