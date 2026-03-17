@@ -39,27 +39,31 @@ PreProduction {
 
 PreProduction.PreProductionDesign -> Production.ScriptWriting -> Production.Storyboarding -> Production.AssetProduction.Layout
 
-Production.AssetProductionAudioRerouteNodeA {
+Production.AssetProductionAudioRerouteNodeOutgoingA {
     class: RerouteNode
 }
 
-Production.AssetProduction.Audio -- Production.AssetProductionAudioRerouteNodeA
+Production.AssetProduction.Audio -- Production.AssetProductionAudioRerouteNodeOutgoingA
 
-Production.AssetProductionAudioRerouteNodeA -> Production.CompositingCuts.CompositingWork.RoughAudio
+Production.AssetProductionAudioRerouteNodeOutgoingA -> Production.CompositingCuts.CompositingWork.RoughAudio
 
 Production {
-    AssetProduction.Coloring -> AssetsToCompositing -> CompositingCuts
+    AssetProduction.Coloring -> AssetsToCompositing
+    AssetProduction.3dAssetProduction -> AssetsToCompositing
+    AssetProduction.Backgrounds -> AssetsToCompositing
+
+    AssetsToCompositing -> CompositingCuts
 }
 
 Production.CompositingCuts.RenderingEngine.RenderCut -> PostProduction.Editorial.JoiningCuts
 
-PostProduction.AssetProductionAudioRerouteNodeB {
+PostProduction.AssetProductionAudioRerouteNodeOutgoingB {
     class: RerouteNode
 }
 
-Production.AssetProductionAudioRerouteNodeA -- PostProduction.AssetProductionAudioRerouteNodeB
+Production.AssetProductionAudioRerouteNodeOutgoingA -- PostProduction.AssetProductionAudioRerouteNodeOutgoingB
 
-PostProduction.AssetProductionAudioRerouteNodeB -> PostProduction.Editorial.AudioPlacement
+PostProduction.AssetProductionAudioRerouteNodeOutgoingB -> PostProduction.Editorial.AudioPlacement
 
 PostProduction {
     Editorial.FinalPictureRender -> PictureLock

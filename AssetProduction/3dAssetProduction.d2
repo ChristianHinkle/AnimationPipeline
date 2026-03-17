@@ -1,0 +1,61 @@
+...@../DefaultVars
+
+...@../D2Utils
+
+Title: {
+    label: |md
+        # 3D Asset Production
+    |
+    shape: text
+    near: top-center
+}
+
+AssetProduction.3dAssetProduction: "3D Asset Production" {
+
+    Modeling: "Modeling" {
+        FullResSculping: "Full-Res Sculping"
+
+        FullResSculping -> Retopologize
+
+        Retopologize: "Retopologize"
+
+        Retopologize -> UvUnwrapping
+
+        UvUnwrapping: "UV Unwrapping"
+    }
+
+    Modeling -- ModelingRerouteNodeOutgoingA
+
+    ModelingRerouteNodeOutgoingA {
+        class: RerouteNode
+    }
+
+    ModelingRerouteNodeOutgoingA -> AuthorMaterials
+    ModelingRerouteNodeOutgoingA -> Rigging
+
+    AuthorMaterials: "Author Materials" {
+        "Texturing"
+        "Adjusting UVs if Needed"
+        "Custom Shaders"
+    }
+
+    Rigging: "Rigging" {
+        "Skinning / Weight Painting"
+        "Author Corrective Blend Shapes / Shape Keys / Morph Targets"
+    }
+
+    Rigging -> Animating
+
+    Animating: "Animating" {
+        AuthoringAnimationAssets: "Authoring Animation Assets" {
+            "Key-Framing Bone Transforms"
+            "Animating Curve Data" {
+                "Material Parameters"
+                "Blend Shape Values"
+                "Custom Properties"
+            }
+        }
+
+        "Authoring Custom Blend Shapes / Shape Keys / Morph Targets"
+    }
+}

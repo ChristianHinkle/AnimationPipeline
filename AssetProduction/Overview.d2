@@ -1,6 +1,10 @@
 ...@../DefaultVars
 
+...@../D2Utils
+
 ...@Layout
+...@3dAssetProduction
+...@Backgrounds
 
 Title: {
     label: |md
@@ -16,7 +20,15 @@ AssetProduction: "Asset Production" {
 
     LayoutDirectorRevisions: "Directors Revise Layout"
 
-    LayoutDirectorRevisions -> KeyAnimation
+    LayoutDirectorRevisions -- LayoutDirectorRevisionsRerouteNodeOutgoingA
+
+    LayoutDirectorRevisionsRerouteNodeOutgoingA: {
+        class: RerouteNode
+    }
+
+    LayoutDirectorRevisionsRerouteNodeOutgoingA -> KeyAnimation
+    LayoutDirectorRevisionsRerouteNodeOutgoingA -> 3dAssetProduction
+    LayoutDirectorRevisionsRerouteNodeOutgoingA -> Backgrounds
 
     KeyAnimation: "Key Animation (Genga)" {
         "Tie-Down/Clean-Up, or 2nd Key Iteration (Nigen)"
