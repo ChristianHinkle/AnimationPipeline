@@ -48,9 +48,10 @@ Production.AssetProduction.Audio -- Production.AssetProductionAudioRerouteNodeOu
 Production.AssetProductionAudioRerouteNodeOutgoingA -> Production.CompositingCuts.CompositingWork.RoughAudio
 
 Production {
-    AssetProduction.2dAssetProduction.Coloring -> AssetsToCompositing
-    AssetProduction.3dAssetProduction -> AssetsToCompositing
+    AssetProduction.TimesheetDrivenAnimation.Coloring -> AssetsToCompositing
+    AssetProduction.CurveDrivenAnimation -> AssetsToCompositing
     AssetProduction.Backgrounds -> AssetsToCompositing
+    AssetProduction.3dAssetCreation -> AssetsToCompositing
 
     AssetsToCompositing -> CompositingCuts
 }

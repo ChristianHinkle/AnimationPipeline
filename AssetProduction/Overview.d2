@@ -3,9 +3,10 @@
 ...@../D2Utils
 
 ...@Layout
-...@3dAssetProduction
-...@2dAssetProduction
+...@TimesheetDrivenAnimation
+...@CurveDrivenAnimation
 ...@Backgrounds
+...@3dAssetCreation
 ...@Audio
 
 Title: {
@@ -28,7 +29,7 @@ AssetProduction: "Asset Production" {
         class: RerouteNode
     }
 
-    LayoutDirectorRevisionsRerouteNodeOutgoingA -> 3dAssetProduction
-    LayoutDirectorRevisionsRerouteNodeOutgoingA -> 2dAssetProduction.KeyAnimation
+    LayoutDirectorRevisionsRerouteNodeOutgoingA -> TimesheetDrivenAnimation.KeyAnimation
+    LayoutDirectorRevisionsRerouteNodeOutgoingA -> CurveDrivenAnimation
     LayoutDirectorRevisionsRerouteNodeOutgoingA -> Backgrounds
 }
