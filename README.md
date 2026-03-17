@@ -28,6 +28,7 @@ All software of interest:
 - Meddy
 - Git
 - A version control solution for large binary assets
+- fSpy
 
 ### Storyboarding Software: TBD
 
