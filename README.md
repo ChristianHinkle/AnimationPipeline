@@ -2,17 +2,33 @@
 
 Documentation and diagrams for creating a workflow to produce media such as 2D/3D video animations.
 
-Note: Any tools we end up writing for this are planned to be developed in separate repositories. We will link to them in this documentation when they become available.
-
 The original motivation for this pipeline was to produce 2D/3D animations, but since it's so cross-disciplinary, I plan to generalize these workflows for many purposes.
 
-This workflow should be able to produce 2D animations (like anime), 3D animations (like pre-rendered video game cutscenes), and both at the same time (e.g., 3D backgrounds for anime, or 2D visual effects in the Spider-Verse movie). I think we could even combine this into being a general video-editing and CG/VFX workflow as well for live-action content.
+## Use Cases
+
+### Animation
+
+This workflow should be able to produce 2D animations (like anime), 3D animations (like pre-rendered video game cutscenes), and both at the same time (e.g., 3D backgrounds for anime, or 2D visual effects in the Spider-Verse movie).
 
 The timesheet-based animation workflow is tailored to the Japanese anime industry's production pipeline. But I try to unify the terminology and give analogies for Western terms.
 
 The 3D aspect of this is planned to be used for rendering animations of 3D characters. Namely, characters from our games, so we can post fun video animations of them as another form of content and branding/marketing. We also want this to be a common pipeline for producing actual in-game cutscenes.
 
+### Film / Live Action
+
+I think we could even combine this into being a general video-editing and CG/VFX workflow as well for live-action content.
+
+### Artwork
+
 Another possible use for this pipeline is to render still images as artwork and brand content. E.g., some video game covers are extremely complex (like Mario Kart World). Even though they are just single images, they use the 3D models, pose the models, add custom VFX (3D and 2D), overlay the game title, etc. Basically, they should be able to do anything to get a really good final artwork.
+
+## Custom Tools
+
+Note: Any tools we end up writing for this are planned to be developed in separate repositories. We will link to them in this documentation when they become available.
+
+## Visual Diagrams
+
+The diagrams are written in D2. To see the entire pipeline, install the latest D2 download from https://github.com/terrastruct/d2/releases, and run the command `d2 Overview.d2 Overview.png` (with the current working directory at this cloned repository's root).
 
 ## Software
 
