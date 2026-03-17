@@ -1,22 +1,24 @@
 # MediaProductionPipeline
 
-Documentation, diagrams, and potentially even tools (although, those tools would likely call for separate repositories) to creating a workflow for making 2D/3D video animations.
+Documentation and diagrams for creating a workflow to produce media such as 2D/3D video animations.
 
-This was originally designed for animation pipelines but the workflows will end up becoming generalized for many purposes.
+Note: Any tools we end up writing for this are planned to be developed in separate repositories. We will link to them in this documentation when they become available.
+
+The original motivation for pipeline was to produce 2D/3D animations, but since it's so cross-discipline, I plan to generalize these workflows for many purposes.
 
 This workflow should be able to produce 2D animations (like anime), 3D animations (like pre-rendered video game cutscenes), and both at the same time (e.g., 3D backgrounds for anime, or 2D visual effects in the Spider-Verse movie). I think we could even combine this into being a general video-editing and CG/VFX workflow as well for live-action content.
 
-The 2D aspect of this is planned to be tailored to the Japanese anime industry's production pipeline. E.g., making use of timesheets.
+The timesheet-based animation workflow is tailored to the Japanese anime industry's production pipeline. But I try unifying the terminology / giving analogies for western terms.
 
-The 3D aspect of this is planned to used for rendering animations of 3D characters. Namely, characters from our games so we can post fun video animations of them as another form of content and branding/marketing.
+The 3D aspect of this is planned to used for rendering animations of 3D characters. Namely, characters from our games so we can post fun video animations of them as another form of content and branding/marketing. We also want this to be a common pipeline for producing actual in-game cutscenes.
 
-This could also be useful for rendering still images as artwork and brand content.
+Another possible use for this pipeline is to rendering still images as artwork and brand content. E.g., some video game covers are extremely complex (like Mario Kart World). Even though they are just single images, they use the 3D models, pose the models, add custom VFX (3D and 2D), overlay the game title, and basically they should be able to do whatever possible to get a really good final artwork.
 
 ## Software
 
-Here are the software tools we plan to use.
+So far, all diagrams are completely generic to software choice, but here are the tools we plan to use.
 
-All software of interest:
+All software of interest (not all are incorporated in the workflow):
 - Blender
 - Open 3D Engine (O3DE)
 - Clip Studio
@@ -52,10 +54,22 @@ Or custom scripts for syncing timesheet files to non-Clip-Studio software.
 
 We will need a way to sync timesheet information to the compositing software of choice. Toei's program has tools for After Effects.
 
-### 2D Animation Compositing Software: Blender
+### Animation Compositing Software: Blender
 
 Blender's Video Sequence Editor for animating cels, implementing anime camera work, and VFX.
 
 ### Video Editing Software: Blender
 
 Blender's Video Sequence Editor for combining all the cuts and audio, and rendering the final output artifact to go out for delivery.
+
+### 3D Modeling: Blender
+
+### 3D Hi-Res Scuplting: Blender
+
+Maybe there's a better alternative though.
+
+### 3D Texture Painting: Blender
+
+Maybe there's a better alternative though.
+
+### 3D Animation: Blender
