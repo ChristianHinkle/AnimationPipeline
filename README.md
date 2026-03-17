@@ -1,6 +1,6 @@
 # MediaProductionPipeline
 
-Documentation and diagrams for creating a workflow to produce media such as 2D/3D video animations.
+Documentation and diagrams for creating a workflow to produce media, such as 2D/3D video animations.
 
 The original motivation for this pipeline was to produce 2D/3D animations, but since it's so cross-disciplinary, I plan to generalize these workflows for many purposes.
 
@@ -8,7 +8,7 @@ The original motivation for this pipeline was to produce 2D/3D animations, but s
 
 ### Animation
 
-This workflow should be able to produce 2D animations (like anime), 3D animations (like pre-rendered video game cutscenes), and both at the same time (e.g., 3D backgrounds for anime, or 2D visual effects in the Spider-Verse movie).
+This workflow should be able to produce 2D animations (like anime), 3D animations (like pre-rendered video game cutscenes), and both at the same time (e.g., 3D backgrounds in anime, or 2D visual effects in the Spider-Verse movie).
 
 The timesheet-based animation workflow is tailored to the Japanese anime industry's production pipeline. But I try to unify the terminology and give analogies for Western terms.
 
@@ -20,11 +20,11 @@ I think we could even combine this into being a general video-editing and CG/VFX
 
 ### Artwork
 
-Another possible use for this pipeline is to render still images as artwork and brand content. E.g., some video game covers are extremely complex (like Mario Kart World). Even though they are just single images, they use the 3D models, pose the models, add custom VFX (3D and 2D), overlay the game title, etc. Basically, they should be able to do anything to get a really good final artwork.
+Another possible use for this pipeline is to render still images as artwork and brand content. E.g., some video game covers are extremely complex (like Mario Kart World). Even though they are just single images, they use the 3D models, pose the models, add custom VFX (3D and 2D), overlay the game title, etc. Basically, they should be able to do anything they need (using all departments) to get a really good final artwork.
 
 ## Custom Tools
 
-Note: Any tools we end up writing for this are planned to be developed in separate repositories. We will link to them in this documentation when they become available.
+Note: Any tools we end up writing for this are planned to be developed in separate repositories. We will link to them here when they become available.
 
 ## Visual Diagrams
 
@@ -58,21 +58,30 @@ I decide to use Clip Studio.
 
 ### Layout, Keyframe, and Inbetween 2D Animation Software: Clip Studio
 
-Although ideally not actually required. I feel we should be able to use any illustration software for this step and rely on the compositing step to achieve anything we want in there. At the end of the day, all that matters is that we have the finished cels to send to the compositing team. Clip Studio just happens to have really good animation previewing tools.
+Although ideally not actually required. I feel we should be able to use any illustration software for this step and rely on the compositing step to achieve anything we want in there. At the end of the day, all that matters is that we have the finished cels to send to the compositing team. Clip Studio just happens to have really good animation previewing tools, while at the same time being a top illustration experience.
 
 ### Digital Timesheet File Format: `.tdts`
 
-Toei's file format is not completely necessary. We could just use `.xdts` for the minimal timing data if desired.
+Toei's file format is not completely necessary. We could just use `.xdts` for storing the minimal exposure information. TDTS has some nice metadata as well though, like memos for compositing instructions, episode information. It's nice to have a proper digital format for this information rather than writing it on a PDF.
 
 ### Digital Timesheet Syncing Tool: Toei Animation Digital Exposure Sheet
 
-Or custom scripts for syncing timesheet files to non-Clip-Studio software.
+Or custom scripts for syncing timesheet files to and from non-Clip-Studio software.
 
-We will need a way to sync timesheet information to the compositing software of choice. Toei's program has tools for After Effects.
+We will need a way to sync timesheet information to the compositing software of choice. Toei's program has tools for After Effects, but we're not using AE.
 
 ### Animation Compositing Software: Blender
 
 Blender's Video Sequence Editor for animating cels, implementing anime camera work, and VFX.
+
+### Rendering Software: Open 3D Engine (O3DE)
+
+O3DE will allow us to
+- Write custom shaders
+- Write custom render passes
+- Heavily customize graphics features
+- Add particle systems (currently a very early feature)
+- Easily use in-game content (in cases that we're rendering media for a video game developed in O3DE)
 
 ### Video Editing Software: Blender
 
